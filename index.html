@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Pataky / Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="light">
+
+    <!-- ===== TOP-RIGHT CONTROLS ===== -->
+    <div class="top-controls">
+        <button id="btn-vim" class="ctrl-btn" title="Toggle Vim terminal" aria-label="Toggle Vim terminal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        </button>
+        <button id="btn-theme" class="ctrl-btn" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
+            <svg id="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg id="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <div id="page-content">
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+        <div class="hero-inner">
+            <h1>Patrick Pataky</h1>
+            <p class="tagline">FPGA &amp; Digital Design Engineer &middot; EPFL</p>
+            <nav class="hero-links">
+                <a href="https://github.com/ppataky" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/patrick-pataky" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:patrick.pataky@epfl.ch">Email</a>
+                <a href="patrick-pataky.pdf" target="_blank" rel="noopener">Resume ↓</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+        <h2>About</h2>
+        <p>Master's student in Computer Science at EPFL, specialising in digital design and FPGA development. Currently seeking an internship in hardware design, verification, or embedded systems.</p>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section">
+        <h2>Skills &amp; Tools</h2>
+        <div class="skill-grid">
+            <div class="skill-col">
+                <h3>Languages</h3>
+                <ul>
+                    <li>SystemVerilog / Verilog / VHDL</li>
+                    <li>C / C++</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div class="skill-col">
+                <h3>Tools &amp; Platforms</h3>
+                <ul>
+                    <li>Vivado &middot; Quartus &middot; ModelSim</li>
+                    <li>GDB &middot; Git &middot; Linux</li>
+                    <li>RISC-V &middot; AXI / AHB</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>x-heep-mcu-flash</h3>
+            <span class="project-tech">SystemVerilog &middot; RISC-V &middot; SPI</span>
+            <p>Flash memory controller for the open-source X-HEEP RISC-V microcontroller. Designed the RTL interface, integrated with the AHB bus, and validated through cocotb testbenches.</p>
+        </div>
+        <div class="project">
+            <h3>gecko5-accelerator</h3>
+            <span class="project-tech">SystemVerilog &middot; FPGA &middot; Vivado</span>
+            <p>Custom RTL hardware accelerator targeting the Gecko 5 FPGA board. Achieved timing closure and optimised resource utilisation through pipelining and memory access patterns.</p>
+        </div>
+        <div class="project">
+            <h3>nds-overcooked-clone</h3>
+            <span class="project-tech">C &middot; Nintendo DS &middot; Embedded</span>
+            <p>Multiplayer cooking game for the Nintendo DS, built in bare-metal C. Implemented sprite rendering, tile-based collision, and networked multiplayer over DS WiFi.</p>
+        </div>
+    </section>
+
+    </div><!-- end #page-content -->
+
+    <!-- ===== FULLSCREEN VIM OVERLAY ===== -->
+    <div id="vim-overlay" class="vim-overlay">
+        <div class="vim-frame">
+            <div class="vim-tabline">
+                <span id="vim-tab" class="vim-tab active">portfolio.sv</span>
+                <span class="vim-tabline-fill"></span>
+                <button class="vim-close-btn" id="vim-close-btn" title="Close (Esc)">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+
+            <div class="vim-body">
+                <div class="workspace">
+
+                    <div id="buffer-portfolio" class="buffer active">
+                        <div class="line"><span class="code com">/*</span></div>
+                        <div class="line"><span class="code com"> * Module:  portfolio.sv</span></div>
+                        <div class="line"><span class="code com"> * Author:  Patrick Pataky</span></div>
+                        <div class="line"><span class="code com"> * Contact: patrick.pataky@epfl.ch</span></div>
+                        <div class="line"><span class="code com"> */</span></div>
+                        <div class="line"><span class="code"></span></div>
+                        <div class="line"><span class="code"><span class="kw">module</span> <span class="var">patrick_pataky</span> #(</span></div>
+                        <div class="line"><span class="code">    <span class="kw">parameter</span> <span class="typ">string</span> LOCATION <span class="kw">=</span> <span class="str">"Renens, VD, Switzerland"</span>,</span></div>
+                        <div class="line"><span class="code">    <span class="kw">parameter</span> <span class="typ">int</span>    COFFEE_THRESHOLD <span class="kw">=</span> 3</span></div>
+                        <div class="line"><span class="code">) (</span></div>
+                        <div class="line"><span class="code">    <span class="kw">input</span>  <span class="typ">logic</span> clk,</span></div>
+                        <div class="line"><span class="code">    <span class="kw">input</span>  <span class="typ">logic</span> rst_n,</span></div>
+                        <div class="line"><span class="code">    <span class="kw">output</span> <span class="typ">logic</span> ready_for_internship</span></div>
+                        <div class="line"><span class="code">);</span></div>
+                        <div class="line"><span class="code"></span></div>
+                        <div class="line"><span class="code">    <span class="com">// --- LIFE STATE MACHINE ---</span></span></div>
+                        <div class="line"><span class="code">    <span class="kw">typedef enum logic</span> [<span class="str">2:0</span>] {</span></div>
+                        <div class="line"><span class="code">        SLEEP       <span class="kw">=</span> 3'b000,</span></div>
+                        <div class="line"><span class="code">        CAFFEINATE  <span class="kw">=</span> 3'b001,</span></div>
+                        <div class="line"><span class="code">        CODE_RTL    <span class="kw">=</span> 3'b010,</span></div>
+                        <div class="line"><span class="code">        WAIT_VIVADO <span class="kw">=</span> 3'b011, <span class="com">// The longest state known to mankind</span></span></div>
+                        <div class="line"><span class="code">        DEBUG       <span class="kw">=</span> 3'b100,</span></div>
+                        <div class="line"><span class="code">    } <span class="typ">life_state_t</span>;</span></div>
+                        <div class="line"><span class="code"></span></div>
+                        <div class="line"><span class="code">    <span class="typ">life_state_t</span> current_state, next_state;</span></div>
+                        <div class="line"><span class="code"></span></div>
+                        <div class="line"><span class="code">    <span class="kw">always_ff</span> @(<span class="kw">posedge</span> clk <span class="kw">or negedge</span> rst_n) <span class="kw">begin</span></span></div>
+                        <div class="line"><span class="code">        <span class="kw">if</span> (!rst_n) current_state <span class="kw"><=</span> SLEEP;</span></div>
+                        <div class="line"><span class="code">        <span class="kw">else</span>        current_state <span class="kw"><=</span> next_state;</span></div>
+                        <div class="line"><span class="code">    <span class="kw">end</span></span></div>
+                        <div class="line"><span class="code"></span></div>
+                        <div class="line"><span class="code">    <span class="kw">always_comb begin</span></span></div>
+                        <div class="line"><span class="code">        ready_for_internship <span class="kw">=</span> 1'b1;</span></div>
+                        <div class="line"><span class="code"></span></div>
+                        <div class="line"><span class="code">        next_state <span class="kw">=</span> current_state;</span></div>
+                        <div class="line"><span class="code">        <span class="kw">case</span> (current_state)</span></div>
+                        <div class="line"><span class="code">            SLEEP:       <span class="kw">if</span> (alarm) next_state <span class="kw">=</span> CAFFEINATE;</span></div>
+                        <div class="line"><span class="code">            CAFFEINATE:  next_state <span class="kw">=</span> CODE_RTL;</span></div>
+                        <div class="line"><span class="code">            CODE_RTL:    <span class="kw">if</span> (!syntax_err) next_state <span class="kw">=</span> WAIT_VIVADO;</span></div>
+                        <div class="line"><span class="code">            WAIT_VIVADO: <span class="kw">if</span> (synth_done) next_state <span class="kw">=</span> DEBUG_ILA;</span></div>
+                        <div class="line"><span class="code">            DEBUG_ILA:   <span class="kw">if</span> (timing_met) next_state <span class="kw">=</span> SLEEP;</span></div>
+                        <div class="line"><span class="code">            <span class="kw">default</span>:     next_state <span class="kw">=</span> SLEEP;</span></div>
+                        <div class="line"><span class="code">        <span class="kw">endcase</span></span></div>
+                        <div class="line"><span class="code">    <span class="kw">end</span></span></div>
+                        <div class="line"><span class="code"><span class="kw">endmodule</span></span></div>
+                    </div>
+
+                    <div id="buffer-github" class="buffer">
+                        <div class="line"><span class="code com"># Patrick Pataky (@ppataky) - GitHub Statistics</span></div>
+                        <div class="line"><span class="code"></span></div>
+                        <div class="line"><span class="code"><span class="kw">> TOP LANGUAGES</span></span></div>
+                        <div class="line"><span class="code">  SystemVerilog [<span class="str">██████████████████  </span>] 45%</span></div>
+                        <div class="line"><span class="code">  C/C++         [<span class="str">████████████        </span>] 30%</span></div>
+                        <div class="line"><span class="code">  Python        [<span class="str">██████              </span>] 15%</span></div>
+                        <div class="line"><span class="code">  Verilog/VHDL  [<span class="str">████                </span>] 10%</span></div>
+                        <div class="line"><span class="code"></span></div>
+                        <div class="line"><span class="code"><span class="kw">> RECENT HARDWARE/SOFTWARE PROJECTS</span></span></div>
+                        <div class="line"><span class="code">  * <span class="var">x-heep-mcu-flash</span>       : SystemVerilog Flash Controller for open-source RISC-V</span></div>
+                        <div class="line"><span class="code">  * <span class="var">gecko5-accelerator</span>     : Custom RTL hardware accelerator for Gecko 5 FPGA</span></div>
+                        <div class="line"><span class="code">  * <span class="var">nds-overcooked-clone</span>   : Embedded multiplayer C game for Nintendo DS</span></div>
+                        <div class="line"><span class="code"></span></div>
+                        <div class="line"><span class="code"><span class="com">Type :e portfolio.sv to return.</span></span></div>
+                        <div class="line"><span class="code">~</span></div>
+                    </div>
+
+                </div>
+
+                <div class="vim-status">
+                    <div class="status-left">
+                        <span id="status-filename">portfolio.sv</span>
+                        <span>[+]</span>
+                    </div>
+                    <div class="status-right">
+                        <span>utf-8</span>
+                    </div>
+                </div>
+
+                <div class="vim-cmd-wrapper">
+                    <div class="vim-cmd-container">
+                        <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" placeholder='Type ":help" for commands'>
+                    </div>
+                    <div id="autocomplete-box" class="autocomplete-box"></div>
+                </div>
+            </div>
+
+            <div id="help-overlay">
+                <h3>Vim Portfolio Commands</h3>
+                <ul>
+                    <li><code>:e github.txt</code> — Open GitHub stats</li>
+                    <li><code>:github</code> — Open GitHub profile</li>
+                    <li><code>:linkedin</code> — Open LinkedIn profile</li>
+                    <li><code>:resume</code> — Download resume</li>
+                    <li><code>:help</code> — Show this menu</li>
+                    <li><code>:q</code> — Close help / quit</li>
+                </ul>
+                <p class="help-hint">Press Esc or type :q to close. Use Tab to cycle suggestions.</p>
+            </div>
+        </div>
+    </div><!-- end #vim-overlay -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 Patrick Pataky &middot; <a href="mailto:patrick.pataky@epfl.ch">patrick.pataky@epfl.ch</a></p>
+    </footer>
+
+</body>
+</html>
