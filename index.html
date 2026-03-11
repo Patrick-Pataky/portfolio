@@ -33,7 +33,7 @@
                 <a href="https://github.com/ppataky" target="_blank" rel="noopener">GitHub</a>
                 <a href="https://linkedin.com/in/patrick-pataky" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="mailto:patrick.pataky@epfl.ch">Email</a>
-                <a href="patrick-pataky.pdf" target="_blank" rel="noopener">Resume ↓</a>
+                <a href="patrick-pataky.pdf" target="_blank" rel="noopener">Resume</a>
             </nav>
         </div>
     </section>
@@ -41,7 +41,7 @@
     <!-- ===== ABOUT ===== -->
     <section id="about" class="section">
         <h2>About</h2>
-        <p>Master's student in Computer Science at EPFL, specialising in digital design and FPGA development. Currently seeking an internship in hardware design, verification, or embedded systems.</p>
+        <p>Master student in Computer Science at EPFL, specialising in digital design and FPGA development. Currently seeking an internship in hardware design, verification, or embedded systems for Summer 2026.</p>
     </section>
 
     <!-- ===== SKILLS ===== -->
@@ -59,9 +59,9 @@
             <div class="skill-col">
                 <h3>Tools &amp; Platforms</h3>
                 <ul>
-                    <li>Vivado &middot; Quartus &middot; ModelSim</li>
-                    <li>GDB &middot; Git &middot; Linux</li>
-                    <li>RISC-V &middot; AXI / AHB</li>
+                    <li>Vivado &middot; Quartus &middot; QuestaSim </li>
+                    <li>GDB &middot; Git &middot; Linux </li>
+                    <li>RISC-V &middot; ARM </li>
                 </ul>
             </div>
         </div>
@@ -70,21 +70,63 @@
     <!-- ===== PROJECTS ===== -->
     <section id="projects" class="section">
         <h2>Projects</h2>
+
         <div class="project">
-            <h3>x-heep-mcu-flash</h3>
-            <span class="project-tech">SystemVerilog &middot; RISC-V &middot; SPI</span>
-            <p>Flash memory controller for the open-source X-HEEP RISC-V microcontroller. Designed the RTL interface, integrated with the AHB bus, and validated through cocotb testbenches.</p>
+            <h3>X-HEEP RISC-V MCU &mdash; Flash Controller &amp; Cache Design</h3>
+            <span class="project-tech">SystemVerilog &middot; RISC-V &middot; FPGA &middot; Vivado &middot; QuestaSim &middot; TCL</span>
+            <span class="project-date">Spring 2026 &middot; EPFL ESL Lab</span>
+            <p>Semester project verifying a Flash Controller on a Xilinx FPGA for the open-source X-HEEP RISC-V MCU. Designed a Write-Back Cache (1&ndash;4 sectors) in SystemVerilog to optimise memory access latency. Used Integrated Logic Analyzers (ILA) to debug hardware/software issues across I/O operations, and developed C test applications and TCL-automated QuestaSim simulations to stress-test the controller.</p>
         </div>
+
         <div class="project">
-            <h3>gecko5-accelerator</h3>
-            <span class="project-tech">SystemVerilog &middot; FPGA &middot; Vivado</span>
-            <p>Custom RTL hardware accelerator targeting the Gecko 5 FPGA board. Achieved timing closure and optimised resource utilisation through pipelining and memory access patterns.</p>
+            <h3>cache_ext &mdash; eBPF Page Cache Policies</h3>
+            <span class="project-tech">C &middot; Linux Kernel &middot; eBPF &middot; Bash</span>
+            <span class="project-date">Fall 2025 &middot; CS-477 Advanced Operating Systems</span>
+            <p>Implemented and evaluated a Linux kernel eBPF extension to customize page cache eviction and admission policies for application-specific memory constraints, directly manipulating kernel data structures and synchronization primitives.</p>
         </div>
+
         <div class="project">
-            <h3>nds-overcooked-clone</h3>
-            <span class="project-tech">C &middot; Nintendo DS &middot; Embedded</span>
-            <p>Multiplayer cooking game for the Nintendo DS, built in bare-metal C. Implemented sprite rendering, tile-based collision, and networked multiplayer over DS WiFi.</p>
+            <h3>Midgard &mdash; IOMMU via Structural Simulation Toolkit</h3>
+            <span class="project-tech">C++ &middot; SST Simulator &middot; TLB/MMU Design</span>
+            <span class="project-date">Fall 2024 &middot; CS-471 Advanced Multiprocessor Architecture</span>
+            <p>Designed a ring-buffer architecture enabling asynchronous I/O page-fault handling for an IOMMU, eliminating performance bottlenecks caused by synchronous DMA blocking and static memory pinning. Built on the <a href="https://midgard.epfl.ch/" target="_blank" rel="noopener">Midgard</a> intermediate address-space framework.</p>
         </div>
+
+        <div class="project">
+            <h3>gecko5-accelerator &mdash; FPGA Hardware Accelerator</h3>
+            <span class="project-tech">Verilog &middot; C/C++ &middot; Yosys &middot; FPGA &middot; DSP</span>
+            <span class="project-date">Fall 2024 &middot; CS-476 Embedded System Design</span>
+            <p>Developed a custom RTL hardware accelerator from scratch on the Gecko 5 Education Board FPGA to offload graphical rendering from the CPU. Achieved a 50&times; speedup over the software baseline by profiling C code to identify critical paths and designing optimised pipelined RTL.</p>
+        </div>
+
+        <div class="project">
+            <h3>Bachelor Project &mdash; FPGA Side-Channel Attacks</h3>
+            <span class="project-tech">FPGA &middot; Xilinx Zynq UltraScale &middot; Vivado &middot; Python &middot; TCL</span>
+            <span class="project-date">Spring 2024 &middot; PARSA Lab, EPFL</span>
+            <p>Conducted remote side-channel power analysis on multi-tenant FPGAs using voltage-routing delay sensors to capture power consumption traces during partial reconfiguration. Analysed attacker/victim placement impact on leakage in a dynamic partial reconfiguration environment.</p>
+        </div>
+
+        <div class="project">
+            <h3>MIPS R10000 Out-of-Order Processor Simulator</h3>
+            <span class="project-tech">C &middot; Pipeline Simulation &middot; OoO Execution</span>
+            <span class="project-date">Spring 2024 &middot; CS-470 Advanced Computer Architecture</span>
+            <p>Designed and implemented a cycle-accurate simulator modelling the microarchitecture of a MIPS R10000 out-of-order processor, incorporating pipeline stages, register renaming, reorder buffer management, and exception handling.</p>
+        </div>
+
+        <div class="project">
+            <h3>nds-overcooked-clone &mdash; Nintendo DS Multiplayer Game</h3>
+            <span class="project-tech">C &middot; Nintendo DS &middot; Embedded &middot; DMA</span>
+            <span class="project-date">Fall 2023 &middot; EE-310 Microprogrammed Embedded Systems</span>
+            <p>Developed a multiplayer &ldquo;Overcooked&rdquo;-style cooking game on the Nintendo DS in bare-metal C. Implemented sprite rendering, tile-based collision detection, and networked multiplayer over DS WiFi, while optimising RAM usage and handling real-time constraints on resource-limited hardware.</p>
+        </div>
+
+        <div class="project">
+            <h3>IoT Force-Feedback System</h3>
+            <span class="project-tech">C++ &middot; Arduino Nano 33 IoT &middot; Sensor Integration</span>
+            <span class="project-date">Summer 2022 &middot; Independent / Consulting</span>
+            <p>Developed embedded firmware to interface an Arduino Nano 33 IoT with a FlexiForce load-cell sensor and HX711 amplifier. Programmed custom logic to trigger micro-vibrators based on real-time weight thresholds, with a Blynk mobile GUI for remote monitoring and configuration over WiFi.</p>
+        </div>
+
     </section>
 
     </div><!-- end #page-content -->

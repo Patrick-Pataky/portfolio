@@ -32,7 +32,7 @@ body {
 .top-controls {
     position: fixed;
     top: 2.5rem;
-    right: 1rem;
+    right: 2.5rem;
     display: flex;
     gap: 0.5rem;
     z-index: 100;
@@ -136,6 +136,10 @@ body {
     color: var(--text-muted);
 }
 
+#about p {
+    text-align: justify;
+}
+
 .section ul {
     list-style: none;
     padding: 0;
@@ -175,6 +179,13 @@ body {
     display: inline-block;
     font-size: 0.8rem;
     color: var(--text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.project-date {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--accent);
     margin-bottom: 0.4rem;
 }
 
